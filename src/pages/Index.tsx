@@ -1,10 +1,16 @@
 
+import { Link } from "react-router-dom";
 import MindMap from "../components/MindMap";
+import { ChevronLeft } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-mindmap-bg to-mindmap-node flex flex-col">
-      <header className="py-6 text-center">
+      <header className="py-6 text-center relative">
+        <Link to="/" className="absolute left-6 top-6 flex items-center text-gray-400 hover:text-white transition-colors">
+          <ChevronLeft size={16} className="mr-1" />
+          <span>Back to Home</span>
+        </Link>
         <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-mindmap-accent to-mindmap-highlight mb-2">
           Mind Map Builder
         </h1>
@@ -19,7 +25,7 @@ const Index = () => {
       </main>
       
       <footer className="py-4 text-center text-gray-500 text-sm">
-        <p>Mind Map Builder &copy; 2025</p>
+        <p>MindNest &copy; 2025</p>
       </footer>
     </div>
   );
