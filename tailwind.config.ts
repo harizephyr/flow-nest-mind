@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				mindmap: {
+					bg: "#1A1F2C",
+					node: "#252A37",
+					accent: "#8B5CF6",
+					accent2: "#6E59A5",
+					highlight: "#1EAEDB"
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +92,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'node-expand': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(-10px) scale(0.95)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					}
+				},
+				'pulse-subtle': {
+					'0%, 100%': { 
+						opacity: '1' 
+					},
+					'50%': { 
+						opacity: '0.85' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'node-expand': 'node-expand 0.3s ease-out forwards',
+				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'node-gradient': 'linear-gradient(135deg, #252A37 0%, #2A303C 100%)',
+				'accent-gradient': 'linear-gradient(135deg, #8B5CF6 0%, #6E59A5 100%)'
 			}
 		}
 	},
